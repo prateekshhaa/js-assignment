@@ -1,0 +1,107 @@
+1.The JavaScript method toString() converts an array to a string of (comma separated) array values.
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+Result
+Banana,Orange,Apple,Mango
+
+2.The join() method also joins all array elements into a string.
+It behaves just like toString(), but in addition you can specify the separator:
+Example
+var fruits = ["Banana", "Orange","Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+Result
+Banana * Orange * Apple * Mango
+
+3.Popping and Pushing
+When you work with arrays, it is easy to remove elements and add new elements.
+This is what popping and pushing is:
+Popping items out of an array, or pushing items into an array.
+Popping
+The pop() method removes the last element from an array:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop(); 
+
+4.
+Pushing
+The push() method adds a new element to an array (at the end):
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi"); 
+
+5.Shifting Elements
+Shifting is equivalent to popping, working on the first element instead of the last.
+The shift() method removes the first array element and "shifts" all other elements to a lower index.
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift(); 
+
+6.The unshift() method adds a new element to an array (at the beginning), and "unshifts" older elements:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+The shift() method returns the string that was "shifted out".
+The unshift() method returns the new array length.
+
+7.Changing Elements
+Array elements are accessed using their index number:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi"; 
+
+8.Deleting Elements
+Since JavaScript arrays are objects, elements can be deleted by using the JavaScript operator delete:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0]; 
+
+9.Splicing an Array
+The splice() method can be used to add new items to an array:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+10.Using splice() to Remove Elements
+With clever parameter setting, you can use splice() to remove elements without leaving "holes" in the array:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0, 1); 
+
+11.Sorting an Array
+The sort() method sorts an array alphabetically:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+
+12.The reverse() method reverses the elements in an array.
+You can use it to sort an array in descending order:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();           
+fruits.reverse(); 
+
+13.Numeric Sort
+By default, the sort() function sorts values as strings.
+This works well for strings ("Apple" comes before "Banana").
+However, if numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1".
+Because of this, the sort() method will produce incorrect result when sorting numbers.
+You can fix this by providing a compare function:
+Example
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a-b});
+
+14.Joining Arrays
+The concat() method creates a new array by concatenating two arrays:
+Example
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias","Linus"];
+var myChildren = myGirls.concat(myBoys);
+
+15.The valueOf() Method
+The valueOf() method is the default behavior for an array. It converts an array to a primitive value.
+JavaScript will automatically convert an array to a string when a primitive value is expected.
+Because of this, all these examples will produce the same result:
+Example
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits;
